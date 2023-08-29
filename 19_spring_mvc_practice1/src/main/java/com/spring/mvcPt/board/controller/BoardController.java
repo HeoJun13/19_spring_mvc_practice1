@@ -1,5 +1,6 @@
 package com.spring.mvcPt.board.controller;
 //08월28~29일 23시~24시34분 boardDetail 까지 구현완료 소요 1시간34분
+//addBoard 파일데이터 추가 오류
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,18 +27,18 @@ public class BoardController {
 		
 	}
 	
-	@PostMapping
+	@PostMapping("/addBoard")
 	@ResponseBody
 	public String addBoard(@ModelAttribute BoardDTO boardDTO) throws Exception{
 		
 		boardService.addBoard(boardDTO);
 		
-		String JsScript = "<script>";
-				JsScript += "alert('Post Added')";
-				JsScript +=	"location.href='boardList'";
-				JsScript += "</script>";
+		String  jsScript = "<script>";
+				jsScript += "alert('Post Added');";
+				jsScript +=	"location.href='boardList';";
+				jsScript += "</script>";
 		
-		return JsScript;
+		return jsScript;
 		
 	}
 	

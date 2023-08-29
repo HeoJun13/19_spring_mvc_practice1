@@ -38,7 +38,7 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public void getBoardDetail(long boardId) {
-		sqlSession.update("boardMappers.uqdateBoard" , boardId);
+		sqlSession.update("boardMappers.selectOneBoard" , boardId);
 		
 	}
 

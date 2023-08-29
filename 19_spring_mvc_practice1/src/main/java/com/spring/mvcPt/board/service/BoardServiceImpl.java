@@ -15,7 +15,9 @@ public class BoardServiceImpl implements BoardService {
 	private BoardDAO boardDAO;
 	
 	@Override
-	public void addBoard(BoardDTO boardDTO) {
+	public void addBoard(BoardDTO boardDTO) throws Exception {
+		
+		boardDAO.insertBoard(boardDTO);
 		
 	}
 
@@ -29,7 +31,6 @@ public class BoardServiceImpl implements BoardService {
 	public BoardDTO getBoardDetail(long boardId) {
 		
 		boardDAO.getBoardDetail(boardId);
-		
 		return boardDAO.selectOneBoard(boardId);
 	}
 
