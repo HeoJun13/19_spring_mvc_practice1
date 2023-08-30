@@ -8,9 +8,9 @@ public interface BoardDAO {
 	
 	public void insertBoard(BoardDTO boardDTO) throws Exception;
 	public List<BoardDTO> selectListBoard() throws Exception;
-	public BoardDTO selectOneBoard(long boardId);
-	public void getBoardDetail(long boardId);
-
+	public BoardDTO selectOneBoard(long boardId) throws Exception;
+	public void updateReadCnt(long boardId) throws Exception;
+	
 	
 
 }

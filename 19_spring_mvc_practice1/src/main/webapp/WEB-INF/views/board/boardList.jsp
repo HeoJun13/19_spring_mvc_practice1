@@ -24,7 +24,6 @@
 					<td>${i.count }</td>
 					<td><a href="boardDetail?boardId=${boardDTO.boardId }">${boardDTO.subject }</a></td>
 					<td>${boardDTO.writer }</td>
-					<td><fmt:formatDate value="${boardDTO.enrollDt }" pattern="yyyy-MM-dd"/></td>
 					<td>${boardDTO.readCnt }</td>
 				</tr>
 			</c:forEach>

@@ -10,7 +10,7 @@ public interface BoardService {
 
 	public List<BoardDTO> getBoardList() throws Exception;
 
-	public BoardDTO getBoardDetail(long boardId);
+	public BoardDTO getBoardDetail(long boardId) throws Exception;
 
 
 

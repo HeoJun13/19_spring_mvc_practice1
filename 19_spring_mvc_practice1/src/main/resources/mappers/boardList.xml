@@ -35,9 +35,17 @@
 			BOARD
 	WHERE
 			BOARD_ID = #{boardId}
-	
-	
 	</select>
+	<update id="updateReadCnt" parameterType="long">
+	UPDATE
+			BOARD
+	SET
+			READ_CNT = READ_CNT + 1
+	WHERE
+			BOARD_ID = #{boardID}
+	
+	</update>
+	
 	
 	
 	</mapper>

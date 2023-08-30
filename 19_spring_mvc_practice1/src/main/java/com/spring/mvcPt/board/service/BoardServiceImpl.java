@@ -28,9 +28,9 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public BoardDTO getBoardDetail(long boardId) {
+	public BoardDTO getBoardDetail(long boardId) throws Exception{
 		
-		boardDAO.getBoardDetail(boardId);
+		boardDAO.updateReadCnt(boardId);
 		return boardDAO.selectOneBoard(boardId);
 	}
 

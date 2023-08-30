@@ -56,11 +56,12 @@ public class BoardController {
 	}
 	
 	@GetMapping("/boardDetail")
-	public ModelAndView boardDetail(@RequestParam("boardId")long boardId) {
+	public ModelAndView boardDetail(@RequestParam("boardId") long boardId) throws Exception{
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("board/boardDetail");
 		mv.addObject("boardDTO", boardService.getBoardDetail(boardId));
+		
 		
 		return mv;
 		

@@ -23,25 +23,27 @@ public class BoardDAOImpl implements BoardDAO {
 
 
 	@Override
-	public List<BoardDTO> selectListBoard() {
+	public List<BoardDTO> selectListBoard() throws Exception{
 		
 		return sqlSession.selectList("boardMappers.selectListBoard");
 	}
 
 
 	@Override
-	public BoardDTO selectOneBoard(long boardId) {
-		// TODO Auto-generated method stub
-		return null;
+	public BoardDTO selectOneBoard(long boardId) throws Exception{
+		return sqlSession.selectOne("boardMappers.selectOneBoard" , boardId);
 	}
 
 
 	@Override
-	public void getBoardDetail(long boardId) {
-		sqlSession.update("boardMappers.selectOneBoard" , boardId);
-		
+	public void updateReadCnt(long boardId) throws Exception {
+		sqlSession.update("boardMappers.updateReadCnt" , boardId);
 	}
 
+
+
+
+	
 
 	
 }
